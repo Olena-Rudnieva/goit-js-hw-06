@@ -7,7 +7,15 @@ const ingredients = [
   'Condiments',
 ];
 
-const itemEl = document.querySelector('li');
-// itemEl.textContent = 'Potatoes';
-// itemEl.classList.add('item');
-console.log(itemEl);
+const list = document.querySelector('#ingredients');
+
+
+ingredients.forEach(element => {  
+  const itemEl = document.createElement('li');
+  itemEl.textContent = element;
+  itemEl.classList.add('item');
+  list.append(itemEl);
+});
+
+
+
