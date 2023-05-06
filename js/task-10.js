@@ -5,13 +5,9 @@ function getRandomHexColor() {
 }
 
 const inputEl = document.querySelector('#controls input');
-console.log(inputEl);
 const btnCreate = document.querySelector('button[data-create]');
-console.log(btnCreate);
 const btnDestroy = document.querySelector('button[data-destroy]');
-console.log(btnDestroy);
 const boxEl = document.querySelector('#boxes');
-console.log(boxEl);
 
 function onInputChange() {
   let boxAmount = Number(inputEl.value);
