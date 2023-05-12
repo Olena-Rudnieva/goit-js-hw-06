@@ -14,17 +14,16 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery');
-galleryEl.classList.add('gallery-list');
 
-const makeGallery = ({ url, alt }) => {
-  const itemEl = document.createElement('li');
-  itemEl.insertAdjacentHTML(
-    'afterbegin',
-    `<img src="${url}" alt="${alt}" class="gallery-img"></img>`
-  );
+const markup = images
+  .map(
+    ({ url, alt }) => `
+<li>
+  <img src="${url}" alt="${alt}" class="gallery-img">  
+</li>
+`
+  )
+  .join('');
 
-  return itemEl;
-};
+galleryEl.insertAdjacentHTML('beforeend', markup);
 
-const galleryList = images.map(makeGallery);
-galleryEl.append(...galleryList);
